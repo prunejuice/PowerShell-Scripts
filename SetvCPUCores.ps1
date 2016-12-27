@@ -12,11 +12,11 @@ elseif ($cpu % 2 -eq 0){$corecount = 2}
 
 else {$corecount = 1}
 
-#This following line creates the customisation specification
+#The following line creates the core customisation specification
 #numCPUs is the total number of CPU cores for the VM, numcorespersocket is how many cores each socket will be configured with
 
-$spec = new-object -typename VMware.VIM.virtualmachineconfigspec -property @{'numcorespersocket'=$corecount;'numCPUs'=$cpu}
+$corespec = new-object -typename VMware.VIM.virtualmachineconfigspec -property @{'numcorespersocket'=$corecount;'numCPUs'=$cpu}
 
-#This line reconfigures the VM with the customisation specification $spec
+#This line reconfigures the VM with the customisation specification $corespec
 
-(Get-VM $vmm).ExtensionData.ReconfigVM_Task($spec)
+(Get-VM $vmm).ExtensionData.ReconfigVM_Task($corespec)
