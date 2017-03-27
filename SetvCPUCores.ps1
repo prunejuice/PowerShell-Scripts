@@ -1,3 +1,6 @@
+#This script is useful if you use PowerCLI to make changes to VM CPU configurations
+#Power CLI will only modify CPU sockets leaving CPU cores per socket at 1 
+
 $vmm = "TestVM1"
 $cpu = 8
 
