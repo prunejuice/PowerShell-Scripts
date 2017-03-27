@@ -1,3 +1,7 @@
+#This script is useful for environments that do not have dvSwitch licensing
+#The script will create vSwitches, then add port groups to each
+#You can easily comment out the New-VirtualSwitch commands to add port groups to existing vSwitches
+
 $hosts = "host1","host2"
 
 Foreach ($i in $hosts){
